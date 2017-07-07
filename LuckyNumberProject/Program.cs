@@ -22,26 +22,59 @@ namespace LuckyNumberProject
             // Array must be populated using a loop
             //If the user enters a number that is outside of the range set, prompt the user to give you a valid number. 
             //Do this until the user enters a valid number.
+            int jackPot = 125000;
             int[] userGuess = new int[6];
             for (int i = 0; i <= userGuess.Length - 1; i++)
             {
                 Console.WriteLine("Guess a number:");
                 userGuess[i] = int.Parse(Console.ReadLine());
 
-                while (userGuess[i] > firstNumber && userGuess[i] < secondNumber)
+                //This while loop is acting as a conditional
+                while (userGuess[i] < firstNumber || userGuess[i] > secondNumber)
                 {
-                    userGuess[i] = int.Parse(Console.ReadLine());
-                }
-
-                Console.WriteLine("Please insert a number between" + " " + firstNumber + " - " + secondNumber);
+                    Console.WriteLine("Please insert a number between" + " " + firstNumber + " - " + secondNumber);
+                    break;
+                }     
             }
+
             //PART TWO
             //the program should randomly generate 6 numbers using a loop
+            Random randomNumber = new Random();
+            int[] winningNumber = new int[6];
+            for (int i = 0; i <= winningNumber.Length - 1; i++)
+            {   
+               winningNumber[i] = randomNumber.Next(firstNumber, secondNumber);
+            }
+            foreach (int number in winningNumber)
+            {
+                Console.WriteLine("The Winning Numbers are: " + (number));
+            }
+
+            //PART 3
+            //Hard-code a value for the jackpot amount and let the user know what the jackpot amount is at some.. 
+            //..point you decide in the program. (at the beginning)
+            //The program should count the number of correctly guessed numbers and output to..
+            //..the console to notify the user. 
+            int rightNumber = 0;
+            for (int i = 0; i < userGuess.Length; i++)
+            {
+                foreach(int guess in userGuess)
+                    if (winningNumber == userGuess)
+                {
+                        rightNumber += 1;
+                }  
+            }
+            Console.WriteLine("You guessed" + " " + rightNumber + " " + "numbers correctly!");
 
 
 
 
-            
+
+
+
+
+
+
 
 
         }
