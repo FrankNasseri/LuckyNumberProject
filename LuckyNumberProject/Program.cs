@@ -55,14 +55,32 @@ namespace LuckyNumberProject
             //..point you decide in the program. (at the beginning)
             //The program should count the number of correctly guessed numbers and output to..
             //..the console to notify the user. 
-            int rightNumber = 0;
+            int rightNumber = 0; //new int[6]; 0;
             for (int i = 0; i < userGuess.Length; i++)
             {
-                foreach(int guess in userGuess)
+                foreach (int guess in userGuess)
                     if (winningNumber == userGuess)
-                {
+                    {
+                        rightNumber += 0;
+                    }
+                    {
                         rightNumber += 1;
-                }  
+                    }
+                    {
+                        rightNumber += 2;
+                    }
+                    {
+                        rightNumber += 3;
+                    }
+                    {
+                        rightNumber += 4;
+                    }
+                    {
+                        rightNumber += 5;
+                    }
+                    {
+                        rightNumber += 6;
+                    }
             }
             Console.WriteLine("You guessed" + " " + rightNumber + " " + "numbers correctly!");
 
