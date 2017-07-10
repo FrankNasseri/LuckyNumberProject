@@ -59,40 +59,42 @@ namespace LuckyNumberProject
             for (int i = 0; i < userGuess.Length; i++)
             {
                 foreach (int guess in userGuess)
-                    if (winningNumber == userGuess)
-                    {
-                        rightNumber += 0;
-                    }
+                {
+                    if (guess == userGuess[i]) ;
+                }
                     {
                         rightNumber += 1;
                     }
-                    {
-                        rightNumber += 2;
-                    }
-                    {
-                        rightNumber += 3;
-                    }
-                    {
-                        rightNumber += 4;
-                    }
-                    {
-                        rightNumber += 5;
-                    }
-                    {
-                        rightNumber += 6;
-                    }
             }
             Console.WriteLine("You guessed" + " " + rightNumber + " " + "numbers correctly!");
-
-
-
-
-
-
-
-
-
-
+            if (rightNumber == 6)
+            {
+                Console.WriteLine("Congrats, you guessed all the numbers right!");
+            }
+            else if (rightNumber == 5)
+            {
+                Console.WriteLine("Congrats, you guessed five numbers right! ");
+            }
+            else if (rightNumber == 4)
+            {
+                Console.WriteLine("Congrats, you guessed four numbers right! ");
+            }
+            else if (rightNumber == 3)
+            {
+                Console.WriteLine("Congrats, you guessed three numbers right! ");
+            }
+            else if (rightNumber == 2)
+            {
+                Console.WriteLine("Congrats, you guessed two numbers right! ");
+            }
+            else if (rightNumber == 1)
+            {
+                Console.WriteLine("Congrats, you guessed one number right! ");
+            }
+            else
+            {
+                Console.WriteLine("Why dont you try again!?");
+            }
 
 
         }
